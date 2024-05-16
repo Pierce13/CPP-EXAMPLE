@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/build",
+  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/TestExample.cpp.dir/TestExample.cpp.cpp.o -c \"/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/TestExample.cpp.cpp\"",
+  "file": "/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/TestExample.cpp.cpp",
+  "output": "CMakeFiles/TestExample.cpp.dir/TestExample.cpp.cpp.o"
+}
+]
