@@ -1,11 +1,29 @@
-cmake_minimum_required(VERSION 3.5.0)
-project(TestExample.cpp VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+project( TestExample )
 
-include(CTest)
-enable_testing()
+set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_EXTENSIONS OFF )
+set( CMAKE_CXX_STANDARD_REQUIRED ON )
 
-add_library(TestExample.cpp TestExample.cpp.cpp)
+set( APP_EXECUTABLE TestExample )
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+include_directories( inc )
+
+ADD_EXECUTABLE(TestExample "src/TestExample.cpp")
+
+#ADD_EXECUTABLE( ${APP_EXECUTABLE} "src/TEST...cpp"  "src/...cpp")
+
+target_compile_definitions(TestExample PRIVATE TESTING)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+set_property( DIRECTORY PROPERTY VS_STARTUP_PROJECT ${APP_EXECUTABLE} )
+
+#include (CTest)
+#add_test(${APP_EXECUTABLE}_test ${APP_EXECUTABLE} 1)
+
+find_program(VALGRIND "valgrind")
+if(VALGRIND)
+	add_custom_target(valgrind
+    COMMAND "${VALGRIND}" --tool=memcheck --leak-check=yes --show-reachable=yes --error-exitcode=1 $<TARGET_FILE:${APP_EXECUTABLE}>)
+endif()
