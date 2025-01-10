@@ -1,3 +1,0 @@
-/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/build/CMakeFiles/TestExample.dir
-/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/build/CMakeFiles/edit_cache.dir
-/Users/piercescott/Weber State/Fall 2024/CS 1410/CPP-EXAMPLE/build/CMakeFiles/rebuild_cache.dir
